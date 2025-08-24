@@ -10,6 +10,8 @@
 # Define your function and call it below.
 
 def calculate_area_triangle(base,height):
+    if base <= 0 or height <= 0 :
+        return "Enter positive numbers, base and height must be positive."
     area = (base*height) / 2
     return area
     
@@ -30,8 +32,8 @@ print('Exercise 1:', calculate_area_triangle(7, 3))
 # Define your function and call it to see the result.
 
 def simple_interest(principal, rate, time):
-   simple_interest = (principal * rate * time) / 100
-   return simple_interest
+   interest = (principal * rate * time) / 100
+   return interest
 
 print('Exercise 2:', simple_interest(1000, 5, 2))
 print('Exercise 2:', simple_interest(1500, 3.5, 5))
@@ -76,6 +78,8 @@ def convert_temperature(temperature,unit):
        return (temperature * 9/5) + 32
     elif unit == 'F':
        return (temperature - 32) * 5/9
+    else:
+        return "Invalid unit. Use 'C' or 'F' . "
 
 print('Exercise 4: Convert 0°C to Fahrenheit:', convert_temperature(0, 'C'))
 print('Exercise 4: Convert 32°F to Celsius:', convert_temperature(32, 'F'))
@@ -131,8 +135,8 @@ print('Exercise 6:', largest(10, 4, 2))
 # Write your function and test its output below.
 
 def calculate_tip(bill,tip):
-    total_bill = bill*(tip/100)
-    return total_bill
+    tip_amoute = bill*(tip/100)
+    return tip_amoute
 
 print('Exercise 7:', calculate_tip(50, 20))
 
@@ -182,8 +186,12 @@ def basic_calculator(num1,num2,operation):
        return num1 - num2
     elif operation == 'multiply': 
        return num1 * num2
-    elif operation == 'divide': 
+    elif operation == 'divide':
+       if num2 == 0:
+           "Error Divition by zero" 
        return num1 / num2
+    else:
+        return "Invalid operation"
 
 
 print('Exercise 9 Result:', basic_calculator(10, 5, "subtract"))
